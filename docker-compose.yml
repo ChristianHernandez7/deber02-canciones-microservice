@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  backend:
+    image: christianh14/deber02-backend-songs:1.0
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://postgres.vxgpmumzosvydssjctqn:Politecnica1@aws-0-us-west-1.pooler.supabase.com:6543/postgres
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
